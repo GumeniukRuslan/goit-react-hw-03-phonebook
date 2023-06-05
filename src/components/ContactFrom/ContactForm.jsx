@@ -1,5 +1,7 @@
 import { nanoid } from "nanoid";
 import { Component } from "react";
+import PropTypes from 'prop-types';
+
 
 export class ContactForm extends Component {
 
@@ -8,7 +10,13 @@ export class ContactForm extends Component {
     number: ''
   }
 
+  static propTypes = {
+        saveContact: PropTypes.func.isRequired,
+    }
+
+
   handleChange = ({ target }) => this.setState({ [target.name]: target.value })
+
   submitForm = (evt) => {
     evt.preventDefault();
     this.props.saveContact({ ...this.state, id: nanoid() })

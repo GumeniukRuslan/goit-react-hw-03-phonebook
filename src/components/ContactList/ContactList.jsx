@@ -1,4 +1,6 @@
-export const ContactList = ({ contacts,  deleteContact }) => {
+import PropTypes from 'prop-types';
+
+export const ContactList = ({ contacts, deleteContact }) => {
   if (!contacts.length) {
     return <p>No matches</p>
   }
@@ -8,3 +10,8 @@ export const ContactList = ({ contacts,  deleteContact }) => {
     </ul>
   )
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  deleteContact: PropTypes.func.isRequired
+} 

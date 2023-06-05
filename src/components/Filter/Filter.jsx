@@ -1,4 +1,6 @@
-export const Filter = ({filterValue}) => {
+import PropTypes from 'prop-types';
+
+export const Filter = ({ filterValue }) => {
   return (
     <>
       <label htmlFor="filter">Find contacts by name</label>
@@ -7,3 +9,7 @@ export const Filter = ({filterValue}) => {
  
   )
 }
+
+Filter.propTypes = {
+  filterValue: PropTypes.func.isRequired
+} 
